@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
     <!-- <pagenation :current="1" :total="pageTotal" size="sm" :pageSize="20" :pageSizes="[20, 80, 100, 200]" :currentChange="handlePageChange" :sizeChange="handleSizeChange"></pagenation> -->
-
-    <pagenation :total="pageTotal" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :currentChange="handlePageChange" :sizeChange="handleSizeChange"></pagenation>
+    <pagenation :total="pageTotal" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :currentChange="handlePageChange" :numsChange="handleSizeChange"></pagenation>
   </div>
 </template>
 
@@ -22,9 +21,9 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      // this.pageTotal = 161;
-      // this.currentPage = 1;
-    }, 2000);
+      this.pageTotal = 261;
+      // this.currentPage = 5;
+    }, 5000);
   },
   methods: {
     handlePageChange(val) {
@@ -32,6 +31,7 @@ export default {
     },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
+      this.currentPage = 2;
     }
   }
 };
