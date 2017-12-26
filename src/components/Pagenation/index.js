@@ -1,6 +1,6 @@
 import Pagenation from './Pagenation.vue';
 
-Pagenation.install = function(Vue) {
+Pagenation.install = Vue => {
   Vue.component(Pagenation.name, Pagenation);
 };
 

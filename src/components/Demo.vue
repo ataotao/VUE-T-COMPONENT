@@ -1,28 +1,23 @@
 <template>
-  <div class="hello">
-    <!-- <pagenation :current="1" :total="pageTotal" size="sm" :pageSize="20" :pageSizes="[20, 80, 100, 200]" :currentChange="handlePageChange" :sizeChange="handleSizeChange"></pagenation> -->
-    <pagenation :total="pageTotal" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :currentChange="handlePageChange" :numsChange="handleSizeChange"></pagenation>
+  <div class="demo">
+    <h3>分页 t-pagenation</h3>
+    <t-pagenation :total="pageTotal" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :currentChange="handlePageChange" :numsChange="handleSizeChange"></t-pagenation>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-import Pagenation from '@/components/Pagenation';
-
-Vue.use(Pagenation);
-
 export default {
-  name: 'HelloWorld',
+  name: 'Demo',
   data() {
     return {
       pageTotal: 400,
-      currentPage: 10
+      currentPage: 1
     };
   },
   mounted() {
     setTimeout(() => {
       this.pageTotal = 261;
-      // this.currentPage = 5;
+      this.currentPage = 5;
     }, 5000);
   },
   methods: {

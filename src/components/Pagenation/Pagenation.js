@@ -1,5 +1,5 @@
 export default {
-  name: 'pagenation',
+  name: 't-pagenation',
   props: {
     total: {
       type: Number
@@ -10,7 +10,7 @@ export default {
     },
     styleSize: {
       type: String,
-      default: ''
+      default: 'sm'
     },
     pageNum: {
       type: Number,
@@ -18,7 +18,7 @@ export default {
     },
     pageNums: {
       type: Array,
-      default() {
+      default () {
         return [20, 40, 60];
       }
     },
@@ -36,7 +36,12 @@ export default {
       // 总分页数量
       pageCounter: 0,
       // 每页条数
-      numsModel: this.pageNum
+      numsModel: this.pageNum,
+      // 更多页状态
+      firstPageIsShow: false,
+      lastPageIsShow: false,
+      prevMoreIsShow: false,
+      nextMoreIsShow: false
     };
   },
   watch: {
@@ -66,14 +71,15 @@ export default {
       let pageNum = parseInt(this.numsModel);
       // 总分页数量
       let pageCounter = Math.ceil(this.total / parseInt(pageNum));
-      this.pageCounter = pageCounter;
+      // 当前页
+      let current = this.currentIndex;
       // 开始
-      let startPage = this.currentIndex - 2;
+      let startPage = current - 2;
       // 结束
       let endPage = startPage + count - 1;
-      console.log('startPage', startPage);
-      console.log('endPage', endPage);
-      console.log('pageCounter', pageCounter);
+      // console.log('startPage', startPage);
+      // console.log('endPage', endPage);
+      // console.log('pageCounter', pageCounter);
 
       if (startPage < 1) {
         startPage = 1;
@@ -84,18 +90,29 @@ export default {
         endPage = pageCounter;
         startPage = (endPage - count + 1) < 1 ? 1 : endPage - count + 1;
       }
-      console.log('startPage', startPage);
-      console.log('endPage', endPage);
-      console.log('pageCounter', pageCounter);
+      // console.log('startPage', startPage);
+      // console.log('endPage', endPage);
+      // console.log('pageCounter', pageCounter);
 
+      // 构造渲染分页控件数组
       for (let i = startPage; i <= endPage; i++) {
         arr.push(i);
       }
 
-      // 如果分页总数变化，根据条件当前索引回退到最后一页
-      if (this.currentIndex > pageCounter) {
-        this.currentIndex = pageCounter;
+      // 如果分页总数大于变化前页数，根据条件当前索引回退到最后一页
+      if (current > pageCounter) {
+        current = pageCounter;
       }
+
+      // 第一页、最后页及更多页显示状态
+      this.firstPageIsShow = current > 3 && pageCounter > 5;
+      this.lastPageIsShow = current < pageCounter - 2 && pageCounter > 5;
+      this.prevMoreIsShow = current > 4 && pageCounter > 5;
+      this.nextMoreIsShow = current < pageCounter - 3 && pageCounter > 5;
+
+      // 赋值总分页数量
+      this.pageCounter = pageCounter;
+
       return arr;
     }
   },
@@ -107,18 +124,12 @@ export default {
     // 分页动作
     setIndex(index) {
       let i = parseInt(index);
-      if (i === this.currentIndex) return;
-      // 设定最大最小界限
-      if (i < 1) {
-        i = 1;
-      }
-      if (i > this.pageCounter) {
-        i = this.pageCounter;
-      }
-
+      // 设定最大最小界限及当前页不做响应
+      if (i === parseInt(this.currentIndex) && window.event.type !== 'change') return;
+      if (i > this.pageCounter) return;
+      if (i < 1) return;
       // 赋值当前页
-      this.currentIndex = i;
-      this.currentChange(i);
+      this.currentChange(this.currentIndex = i);
     },
     // 切换每页数量
     handleNumsChange() {

@@ -16,11 +16,11 @@
             <a href="javascript:;">&lt;</a>
           </li>
           <!-- 第一页 -->
-          <li :class="{ active: currentIndex === 1 }" v-if="currentIndex > 3 && pageCounter > 5" @click="setIndex(1)">
+          <li :class="{ active: currentIndex === 1 }" v-if="firstPageIsShow" @click="setIndex(1)">
             <a href="javascript:;">1</a>
           </li>
           <!-- 更多页 -->
-          <li @click="setIndex(currentIndex - 5)" v-if="currentIndex > 4 && pageCounter > 5">
+          <li @click="setIndex(currentIndex - 5)" v-if="prevMoreIsShow">
             <a href="javascript:;">...</a>
           </li>
           <!-- 分页中间部分 -->
@@ -28,11 +28,11 @@
             <a href="javascript:;">{{item}}</a>
           </li>
           <!-- 更多页 -->
-          <li @click="setIndex(currentIndex + 5)" v-if="currentIndex < pageCounter - 3 && pageCounter > 5">
+          <li @click="setIndex(currentIndex + 5)" v-if="nextMoreIsShow">
             <a href="javascript:;">...</a>
           </li>
           <!-- 最后页 -->
-          <li :class="{ active: currentIndex === pageCounter }" v-if="currentIndex < pageCounter - 2 && pageCounter > 5" @click="setIndex(pageCounter)">
+          <li :class="{ active: currentIndex === pageCounter }" v-if="lastPageIsShow" @click="setIndex(pageCounter)">
             <a href="javascript:;">{{pageCounter}}</a>
           </li>
           <!-- 下一页 -->
@@ -45,7 +45,7 @@
       <div class="form-group">
         <span :class="'font-' + styleSize">前往</span>
         <select class="form-control jump-input" v-model="currentIndex" :class="'input-' + styleSize" @change="setIndex(currentIndex)">
-          <option v-for="item in totalNumbers" :value="item">{{item}}</option>
+          <option v-for="item in totalNumbers" :value="item" :disabled="item == currentIndex">{{item}}</option>
         </select>
         <span :class="'font-' + styleSize">页</span>
       </div>
