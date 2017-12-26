@@ -19,7 +19,7 @@ npm run dev
 
 #### 参数
 <table>
-    <tbody>
+    <thead>
     <th>
         <td>参数</td>
         <td>说明</td>
@@ -27,8 +27,8 @@ npm run dev
         <td>是否必选</td>
         <td>默认值</td>
     </th>
-    </tbody>
-    <thead>
+    </thead>
+    <tbody>
       <tr>
         <th>total</th>
         <td>总条目数</td>
@@ -64,21 +64,21 @@ npm run dev
         <td>false</td>
         <td>[20, 40, 60]</td>
       </tr>
-    </thead>
+    </tbody>
 </table>
 
 #### 事件
 
 <table>
-    <tbody>
+    <thead>
     <th>
         <td>参数</td>
         <td>说明</td>
         <td>类型</td>
         <td>回调参数</td>
     </th>
-    </tbody>
-    <thead>
+    </thead>
+    <tbody>
       <tr>
         <th>setCurrentFn</th>
         <td>当前页改变时触发</td>
@@ -91,5 +91,5 @@ npm run dev
         <td>Function</td>
         <td>回调参数 每页设置条数</td>
       </tr>
-    </thead>
+    </tbody>
 </table>
