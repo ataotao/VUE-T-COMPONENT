@@ -1,21 +1,29 @@
-.pagination-component{
+.t-pagination{
   color: #666;
 }
-.pagination-component .jump-input{
+.t-pagination .jump-input{
   padding-left: 0px;
   padding-right: 0px;
 }
-.pagination-component .pagination{
+.t-pagination .pagination{
   margin: 0;
   vertical-align: middle;
 }
 
-.pagination-component .form-group{
+.t-pagination .form-group{
   margin-left: 5px;
   margin-right: 5px;
 }
 
-.pagination-component .font-sm{
+.t-pagination .font-sm{
   font-size: 12px;
+}
+
+.t-pagination .font-md{
+  font-size: 16px;
+}
+
+.t-pagination .font-lg{
+  font-size: 18px;
 }
 

@@ -1,11 +1,11 @@
 <template>
 
-    <div class="pagination-component form-inline">
+    <div class="t-pagination form-inline">
       <div class="form-group">
         <span :class="'font-' + styleSize">共 {{total}} 条</span>
       </div>
       <div class="form-group">
-        <select class="form-control" v-model="numsModel" :class="'input-' + styleSize" @change="handleNumsChange">
+        <select class="form-control" v-model="numsModel" :class="'input-' + styleSize" @change="setNums">
           <option v-for="item in pageNums" :value="item">{{item}}页/条</option>
         </select>
       </div>

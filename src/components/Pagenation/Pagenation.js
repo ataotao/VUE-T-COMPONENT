@@ -22,10 +22,10 @@ export default {
         return [20, 40, 60];
       }
     },
-    currentChange: {
+    setCurrentFn: {
       type: Function
     },
-    numsChange: {
+    setNumsFn: {
       type: Function
     }
   },
@@ -129,11 +129,11 @@ export default {
       if (i > this.pageCounter) return;
       if (i < 1) return;
       // 赋值当前页
-      this.currentChange(this.currentIndex = i);
+      this.setCurrentFn(this.currentIndex = i);
     },
     // 切换每页数量
-    handleNumsChange() {
-      this.numsChange(this.numsModel);
+    setNums() {
+      this.setNumsFn(this.numsModel);
     }
   }
 };
