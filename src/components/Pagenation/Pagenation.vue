@@ -1,10 +1,10 @@
 <template>
 
     <div class="t-pagination form-inline">
-      <div class="form-group">
+      <div class="form-group" v-if="mode === 'full'">
         <span :class="'font-' + styleSize">共 {{total}} 条</span>
       </div>
-      <div class="form-group">
+      <div class="form-group" v-if="mode === 'full'">
         <select class="form-control" v-model="numsModel" :class="'input-' + styleSize" @change="setNums">
           <option v-for="item in pageNums" :value="item">{{item}}页/条</option>
         </select>
@@ -42,7 +42,7 @@
         </ul>
       </div>
       <!-- 跳转页面 -->
-      <div class="form-group">
+      <div class="form-group" v-if="mode === 'full'">
         <span :class="'font-' + styleSize">前往</span>
         <select class="form-control jump-input" v-model="currentIndex" :class="'input-' + styleSize" @change="setIndex(currentIndex)">
           <option v-for="item in totalNumbers" :value="item" :disabled="item == currentIndex">{{item}}</option>

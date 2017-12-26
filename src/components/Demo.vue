@@ -1,7 +1,7 @@
 <template>
   <div class="demo">
     <h3>分页 t-pagenation</h3>
-    <t-pagenation :total="pageTotal" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :setCurrentFn="handlePageChange" :setNumsFn="handleSizeChange"></t-pagenation>
+    <t-pagenation :total="pageTotal" mode="full" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :setCurrentFn="handlePageChange" :setNumsFn="handleSizeChange"></t-pagenation>
   </div>
 </template>
 

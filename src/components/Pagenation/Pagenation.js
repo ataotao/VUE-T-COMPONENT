@@ -1,6 +1,10 @@
 export default {
   name: 't-pagenation',
   props: {
+    mode: {
+      type: String,
+      default: 'full'
+    },
     total: {
       type: Number
     },
@@ -37,6 +41,8 @@ export default {
       pageCounter: 0,
       // 每页条数
       numsModel: this.pageNum,
+      // 显示多少个分页控件
+      count: 5,
       // 更多页状态
       firstPageIsShow: false,
       lastPageIsShow: false,
@@ -66,7 +72,7 @@ export default {
     showPageNumbers() {
       let arr = [];
       // 显示多少个分页控件
-      const count = 5;
+      const count = this.count;
       // 每页显示数量
       let pageNum = parseInt(this.numsModel);
       // 总分页数量
@@ -126,8 +132,14 @@ export default {
       let i = parseInt(index);
       // 设定最大最小界限及当前页不做响应
       if (i === parseInt(this.currentIndex) && window.event.type !== 'change') return;
-      if (i > this.pageCounter) return;
-      if (i < 1) return;
+      if (i > this.pageCounter) {
+        if (i === this.pageCounter + 1 && i - this.currentIndex !== this.count) return;
+        i = this.pageCounter;
+      };
+      if (i < 1) {
+        if (i === 0 && this.currentIndex !== this.count) return;
+        i = 1;
+      };
       // 赋值当前页
       this.setCurrentFn(this.currentIndex = i);
     },
