@@ -20,13 +20,13 @@ npm run dev
 #### 参数
 <table>
     <thead>
-    <th>
-        <td>参数</td>
-        <td>说明</td>
-        <td>类型</td>
-        <td>是否必选</td>
-        <td>默认值</td>
-    </th>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>是否必选</th>
+        <th>默认值</th>
+    </tr>
     </thead>
     <tbody>
       <tr>
@@ -71,12 +71,12 @@ npm run dev
 
 <table>
     <thead>
-    <th>
-        <td>参数</td>
-        <td>说明</td>
-        <td>类型</td>
-        <td>回调参数</td>
-    </th>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>回调参数</th>
+    </tr>
     </thead>
     <tbody>
       <tr>
