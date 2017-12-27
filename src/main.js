@@ -7,8 +7,13 @@ import App from './App';
 import router from './router';
 
 // 安装组件
-import Pagenation from '@/components/Pagenation';
-Vue.use(Pagenation);
+import tComponents from '@/components/index';
+Vue.use(tComponents);
+console.log(tComponents);
+
+// import { Pagenation } from '@/components/index';
+// Vue.use(Pagenation);
+// console.log(Pagenation);
 
 Vue.config.productionTip = false;
 

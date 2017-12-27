@@ -20,16 +20,16 @@
             <a href="javascript:;">1</a>
           </li>
           <!-- 更多页 -->
-          <li @click="setIndex(currentIndex - 5)" v-if="prevMoreIsShow">
-            <a href="javascript:;">...</a>
+          <li class="prev" @click="setIndex(currentIndex - 5)" v-if="prevMoreIsShow">
+            <a href="javascript:;"></a>
           </li>
           <!-- 分页中间部分 -->
           <li v-for="item in showPageNumbers" :class="{'active': item == currentIndex}" @click="setIndex(item)">
             <a href="javascript:;">{{item}}</a>
           </li>
           <!-- 更多页 -->
-          <li @click="setIndex(currentIndex + 5)" v-if="nextMoreIsShow">
-            <a href="javascript:;">...</a>
+          <li class="next" @click="setIndex(currentIndex + 5)" v-if="nextMoreIsShow">
+            <a href="javascript:;"></a>
           </li>
           <!-- 最后页 -->
           <li :class="{ active: currentIndex === pageCounter }" v-if="lastPageIsShow" @click="setIndex(pageCounter)">

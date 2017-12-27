@@ -27,3 +27,26 @@
   font-size: 18px;
 }
 
+.t-pagination .prev a, .t-pagination .next a{
+  width: 28px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.t-pagination .prev a::before, .t-pagination .next a::before{
+  content: "...";
+  position: relative;
+  top: -2px;
+}
+
+.t-pagination .prev a:hover::before, .t-pagination .next a:hover::before{
+  font-size: 1.2em;
+  line-height: 100%;
+  top: 0;
+}
+
+.t-pagination .prev a:hover::before{
+  content: "«";
+}
+.t-pagination .next a:hover::before{
+  content: "»";
+}

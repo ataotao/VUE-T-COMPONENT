@@ -2,6 +2,14 @@
 
 > VUE自定义组件，方便工作使用
 > Demo: localhost:8080
+<ul>
+  <li>分页： t-pagination</li>
+  <li>通知： t-message</li>
+  <li>模态框： t-modal</li>
+  <li>MessageBox对话框： t-msgbox </li>
+  <li>Loading加载： t-loading</li>
+  <li>暂无数据： t-nodata</li>
+</ul>
 
 ## Build Setup
 
@@ -14,6 +22,19 @@ npm run dev
 
 运行Demo localhost:8080
 ```
+
+## 使用方式
+
+`
+全部引入
+import tComponents from '@/components/index';
+Vue.use(tComponents);
+
+或单个引入
+
+import { Pagenation } from '@/components/index';
+Vue.use(Pagenation);
+`
 
 ## 参数说明
 ### t-pagination

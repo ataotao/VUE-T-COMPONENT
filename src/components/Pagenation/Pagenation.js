@@ -83,10 +83,8 @@ export default {
       let startPage = current - 2;
       // 结束
       let endPage = startPage + count - 1;
-      // console.log('startPage', startPage);
-      // console.log('endPage', endPage);
-      // console.log('pageCounter', pageCounter);
 
+      // 构造渲染分页控件数组
       if (startPage < 1) {
         startPage = 1;
         endPage = count;
@@ -96,11 +94,7 @@ export default {
         endPage = pageCounter;
         startPage = (endPage - count + 1) < 1 ? 1 : endPage - count + 1;
       }
-      // console.log('startPage', startPage);
-      // console.log('endPage', endPage);
-      // console.log('pageCounter', pageCounter);
 
-      // 构造渲染分页控件数组
       for (let i = startPage; i <= endPage; i++) {
         arr.push(i);
       }
