@@ -27,19 +27,19 @@ npm run dev
 
 `
 全部引入
-import tComponents from '@/components/index';
+import tComponents from '@/packages/index';
 Vue.use(tComponents);
 
 或单个引入
 
-import { Pagenation } from '@/components/index';
+import { Pagenation } from '@/packages/index';
 Vue.use(Pagenation);
 `
 
 ## 参数说明
 ### t-pagination
 
-#### 参数
+##### 参数
 <table>
     <thead>
     <tr>
@@ -96,7 +96,7 @@ Vue.use(Pagenation);
     </tbody>
 </table>
 
-#### 事件
+##### 事件
 
 <table>
     <thead>
@@ -119,6 +119,72 @@ Vue.use(Pagenation);
         <td>每页显示设置改变触发(mode为full时为必填项)</td>
         <td>Function</td>
         <td>回调参数 每页设置条数</td>
+      </tr>
+    </tbody>
+</table>
+
+### t-message
+
+##### 参数
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>是否必选</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>msg</th>
+        <td>通知文字</td>
+        <td>string | html</td>
+        <td>true</td>
+        <td>无默认值，可支持HTML</td>
+      </tr>
+      <tr>
+        <th>isIcon</th>
+        <td>是否显示图标</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>false (true | false)</td>
+      </tr>
+      <tr>
+        <th>icon</th>
+        <td>图标样式</td>
+        <td>String</td>
+        <td>false</td>
+        <td>'iconfont icon-point'</td>
+      </tr>
+      <tr>
+        <th>duration</th>
+        <td>持续时长</td>
+        <td>Number</td>
+        <td>false</td>
+        <td>2000</td>
+      </tr>
+    </tbody>
+</table>
+
+##### 事件
+
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>回调参数</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>onClose</th>
+        <td>通知关闭后回调</td>
+        <td>Function</td>
+        <td>-----</td>
       </tr>
     </tbody>
 </table>

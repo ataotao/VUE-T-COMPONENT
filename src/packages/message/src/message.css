@@ -1,0 +1,27 @@
+.t-message {
+  background-color: rgba(0, 0, 0, 0.65);
+  min-width: 280px;
+  max-width: 320px;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  transition: opacity .3s, transform .4s;
+  overflow: hidden;
+  padding: 15px 15px 15px 20px;
+  color: #FFF;
+}
+
+.t-icon {
+  font-size: 3em;
+}
+
+.t-message-fade-enter,
+.t-message-fade-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%)
+}
+

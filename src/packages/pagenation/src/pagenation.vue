@@ -54,11 +54,11 @@
 </template>
 
 <script>
-import pageSet from './Pagenation.js';
+import pageSet from './pagenation.js';
 export default pageSet;
 </script>
 
 
 <style scoped>
-  @import './Pagenation.css';
+  @import './pagenation.css';
 </style>
