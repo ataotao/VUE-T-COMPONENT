@@ -188,3 +188,119 @@ Vue.use(Pagenation);
       </tr>
     </tbody>
 </table>
+
+### t-msgbox
+##### 参数
+
+只有msg为必填参数 ，如果没有其他后续操作，简单使用方式，可以this.$msgbox('清楚该提示了吗');
+=================================
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>是否必选</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>title</th>
+        <td>标题</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'提示'</td>
+      </tr>
+      <tr>
+        <th>msg</th>
+        <td>内容（必填项）</td>
+        <td>string | html</td>
+        <td>true</td>
+        <td>isHtml为true才能传入html标签，否则将按照text处理</td>
+      </tr>
+      <tr>
+        <th>showCloseBtn</th>
+        <td>是否显示关闭按钮</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>showConfirmBtn</th>
+        <td>是否显示确定按钮</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>showCancelBtn</th>
+        <td>是否显示取消按钮</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>ConfirmBtnText</th>
+        <td>确定按钮文字</td>
+        <td>String</td>
+        <td>false</td>
+        <td>取消</td>
+      </tr>
+      <tr>
+        <th>cancelBtnText</th>
+        <td>取消按钮文字</td>
+        <td>String</td>
+        <td>false</td>
+        <td>确定</td>
+      </tr>
+      <tr>
+        <th>closeOnBackdrop</th>
+        <td>点击遮罩是否关闭</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <th>isHtml</th>
+        <td>是否为html标签</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <th>isTitle</th>
+        <td>是否有标题</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+    </tbody>
+</table>
+
+##### 事件
+
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>回调参数</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>onConfirm</th>
+        <td>确定后回调函数</td>
+        <td>Function</td>
+        <td>-----</td>
+      </tr>
+      <tr>
+        <th>onCancel：</th>
+        <td>关闭后回调函数</td>
+        <td>Function</td>
+        <td>-----</td>
+      </tr>
+    </tbody>
+</table>

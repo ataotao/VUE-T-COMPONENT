@@ -9,6 +9,11 @@
       <button type="button" class="btn btn-primary" @click="msgFn('autoHide')">打开自动隐藏通知</button>
     </div>
 
+    <h3>对话框 t-msgbox</h3>
+    <div>
+      <button type="button" class="btn btn-primary" @click="msgboxFn()">点击弹出对话框</button>
+    </div>
+
   </div>
 </template>
 
@@ -28,6 +33,26 @@ export default {
     }, 5000);
   },
   methods: {
+    msgboxFn() {
+      this.$msgbox({
+        title: '提示111',
+        msg: '确定删除此信息么？', // 只有此项为必填项
+        isTitle: true,
+        showCloseBtn: true,
+        showConfirmBtn: true,
+        showCancelBtn: true,
+        confirmBtnText: '明白',
+        cancelBtnText: '不明白',
+        closeOnBackdrop: true,
+        onConfirm: () => {
+          console.log('确定');
+          this.$msgbox('成功删除!'); // 如果没有其他后续操作，简单使用方式，可以只传入message
+        },
+        onCancel: () => {
+          console.log('取消');
+        }
+      });
+    },
     msgFn(type) {
       switch (type) {
         case 'autoHide':
