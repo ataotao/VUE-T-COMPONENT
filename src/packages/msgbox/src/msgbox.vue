@@ -2,7 +2,7 @@
   <div v-if="visible">
     <div class="t-msgbox" @click="handleClick($event)">
       <div class="t-msgbox-box modal fade in" tabindex="-1" data-name="backdrop">
-        <div class="modal-dialog modal-sm">
+        <div class="t-modal-dialog modal-dialog modal-sm">
           <div class="modal-content">
 
             <div class="t-msgbox-header" v-if="isTitle">
@@ -18,7 +18,7 @@
             </div>
 
             <div class="t-msgbox-footer" v-if="showCancelBtn || showConfirmBtn">
-              <button type="button" class="btn btn-gray" v-if="showCancelBtn" v-text="cancelBtnText" data-name="cancel"></button>
+              <button type="button" class="btn btn-gray" v-if="showCancelBtn" v-text="cancelBtnText" data-name="cancel"></button>&nbsp;
               <button type="button" class="btn btn-blue" v-if="showConfirmBtn" v-text="confirmBtnText" data-name="confirm"></button>
             </div>
 
@@ -81,14 +81,6 @@ export default {
       default: false
     }
   },
-  computed: {
-
-  },
-
-  watch: {
-
-  },
-
   mounted() {},
   beforeDestroy() {
 

@@ -2,9 +2,9 @@
   display: block;
 }
 
-.t-msgbox .modal.in .modal-dialog{
+.t-msgbox .modal.in .t-modal-dialog{
   top: 30%;
-  margin-top: 0;
+  margin: 0 25px 25px;
 }
 
 .t-msgbox-header .close{
@@ -46,6 +46,9 @@
 @media (min-width: 768px){
   .modal-sm {
       width: 360px;
+  }
+  .t-msgbox .modal.in .t-modal-dialog{
+      margin: 30px auto;
   }
 }
 
