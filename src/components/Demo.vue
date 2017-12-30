@@ -1,33 +1,65 @@
 <template>
   <div class="demo">
+    <!-- <router-link :to="{ name: 'demo'}">A</router-link>
+    <router-link :to="{ name: 'demo1'}">B</router-link> -->
     <h3>分页 t-pagenation</h3>
     <t-pagenation :total="pageTotal" mode="full" :currentPage="currentPage" styleSize="sm" :pageNum="20" :pageNums="[20, 80, 100, 200]" :setCurrentFn="handlePageChange" :setNumsFn="handleSizeChange"></t-pagenation>
+    <hr>
+
     <h3>页面通知 t-message</h3>
     <div>
       <button type="button" class="btn btn-primary" @click="msgFn('string')">便捷使用</button>
       <button type="button" class="btn btn-primary" @click="msgFn('open')">打开通知,调用close关闭</button>
       <button type="button" class="btn btn-primary" @click="msgFn('autoHide')">打开自动隐藏通知</button>
     </div>
+    <hr>
 
     <h3>对话框 t-msgbox</h3>
     <div>
       <button type="button" class="btn btn-primary" @click="msgboxFn()">点击弹出对话框</button>
     </div>
+    <hr>
 
     <h3>暂无数据 t-nodata</h3>
     <div>
       <!-- 默认状态 -->
       <t-nodata></t-nodata>
+
+      <div style="height:30px;"></div>
+
       <!-- 带参数 -->
       <t-nodata msg="自定义无数据内容" icon="glyphicon glyphicon-floppy-remove" iconSize="50px" fontSize="18px" color="black">
         <div style="font-size:14px; color:#CC0000;">这里可以放一些其他的slot内容，<button type="button" class="btn btn-xs btn-primary" @click="count++">+</button> 数字：{{count}}</div>
       </t-nodata>
     </div>
+    <hr>
 
     <h3>页面加载 t-pageloading</h3>
     <div>
       <button type="button" class="btn btn-primary" @click="pageloadingFn">点击页面加载</button>
     </div>
+    <hr>
+
+    <h3>局部加载 t-loading</h3>
+    <div style="margin-bottom:20px;">
+      <button type="button" class="btn btn-primary" @click="loading = true">启动加载</button>
+      <button type="button" class="btn btn-primary" @click="loading = false">停止加载</button>
+    </div>
+    <div class="clearfix">
+      <div class="col-xs-12 col-md-offset-4 col-md-2">
+        <div class="loadingbox" v-t-loading='loading'>
+            默认调用
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-2">
+        <div class="loadingbox" v-t-loading='loading' text='加载中' color="white" background="rgba(0, 0, 0, 0.9)">
+            带参数调用
+        </div>
+      </div>
+    </div>
+    <hr>
+
+
 
   </div>
 </template>
@@ -37,12 +69,14 @@ export default {
   name: 'Demo',
   data() {
     return {
+      loading: false,
       count: 0,
       pageTotal: 400,
       currentPage: 1
     };
   },
   mounted() {
+    console.log(1);
     setTimeout(() => {
       this.pageTotal = 261;
       this.currentPage = 5;
@@ -139,5 +173,19 @@ li {
 }
 a {
   color: #42b983;
+}
+.loadingbox{
+  border: solid 1px #CCC;
+  width: 235px;
+  height: 235px;
+  background-color: #EEE;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+hr{
+  margin: 40px 0;
 }
 </style>

@@ -11,8 +11,11 @@ import router from './router';
 import tComponents from '@/packages/index';
 Vue.use(tComponents);
 
+// 局部安装
 // import { Pagenation } from '@/packages/index';
 // Vue.use(Pagenation);
+// import { Loading } from '@/packages/index';
+// Vue.use(Loading);
 
 Vue.config.productionTip = false;
 

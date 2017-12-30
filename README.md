@@ -380,3 +380,55 @@ Vue.use(Pagenation);
     loading.close();
   }, 500);
 ```
+
+
+### t-loading 局部加载(指令方式 v-t-loading)
+> 两种使用方式：
+
+```
+  <!-- 默认调用 -->
+  <div class="loadingbox" v-t-loading='loading'>
+      默认调用
+  </div>
+
+  <!-- 带参数调用 -->
+  <div class="loadingbox" v-t-loading='loading' text='加载中' color="white" background="rgba(0, 0, 0, 0.9)">
+      带参数调用
+  </div>
+```
+
+##### 参数
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>是否必选</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>text</th>
+        <td>加载文字提示</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'loading...'</td>
+      </tr>
+      <tr>
+        <th>color</th>
+        <td>加载文字及图标颜色</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'#666'</td>
+      </tr>
+      <tr>
+        <th>background</th>
+        <td>加载背景遮罩</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'rgba(255, 255, 255, 0.9)'</td>
+      </tr>
+    </tbody>
+</table>
