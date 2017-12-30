@@ -304,3 +304,54 @@ Vue.use(Pagenation);
       </tr>
     </tbody>
 </table>
+
+### t-data
+##### 参数
+> 支持通过slot写入其他自定义内容，例如：
+
+`
+  <t-nodata msg="自定义无数据内容" icon="glyphicon glyphicon-floppy-remove" iconSize="50px" color="black">
+  这是我想放入的其他内容
+  </t-nodata>
+`
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>是否必选</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>msg</th>
+        <td>无数据时的提示内容</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'暂未有相关数据'</td>
+      </tr>
+      <tr>
+        <th>icon</th>
+        <td>显示图标</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'iconfont icon-weifabushangpin'</td>
+      </tr>
+      <tr>
+        <th>iconSize</th>
+        <td>图标尺寸</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'160px'</td>
+      </tr>
+      <tr>
+        <th>color</th>
+        <td>控件显示颜色</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'#DDD'</td>
+      </tr>
+    </tbody>
+</table>
