@@ -59,7 +59,45 @@
     </div>
     <hr>
 
-
+    <h3>模态框 t-modal</h3>
+    <div>
+      <button type="button" class="btn btn-primary" @click="modalVisible = true">弹出模态框</button>
+      <t-modal :visible.sync="modalVisible" @onConfirm="modalConfirm" @onClose="modalClose">
+        这里可以放模态框，<button type="button" class="btn btn-xs btn-primary" @click="count++">+</button> 数字：{{count}}
+        <table class="table">
+          <caption>Optional table caption.</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </t-modal>
+    </div>
+    <hr>
 
   </div>
 </template>
@@ -69,6 +107,7 @@ export default {
   name: 'Demo',
   data() {
     return {
+      modalVisible: false,
       loading: false,
       count: 0,
       pageTotal: 400,
@@ -76,7 +115,8 @@ export default {
     };
   },
   mounted() {
-    console.log(1);
+    // this.modalVisible = true;
+    // this.$pageloading.open();
     setTimeout(() => {
       this.pageTotal = 261;
       this.currentPage = 5;
@@ -151,6 +191,18 @@ export default {
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
       this.currentPage = 2;
+    },
+    modalConfirm(close) {
+      console.log('modalConfirm');
+      // 模拟异步操作
+      setTimeout(() => {
+        // 关闭模态框
+        close(true);
+      }, 1000);
+    },
+    modalClose() {
+      console.log('modalClose');
+      this.$msgbox('取消!');
     }
   }
 };

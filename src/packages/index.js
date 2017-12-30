@@ -4,10 +4,12 @@ import msgbox from './msgbox';
 import nodata from './nodata';
 import pageloading from './pageloading';
 import loading from './loading';
+import modal from './modal';
 
 const components = [
   pagenation,
-  nodata
+  nodata,
+  modal
 ];
 
 const install = Vue => {
@@ -31,4 +33,5 @@ export const Msgbox = msgbox;
 export const Nodata = nodata;
 export const Pageloading = pageloading;
 export const Loading = loading;
+export const Modal = modal;
 export default install;

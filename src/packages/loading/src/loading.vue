@@ -145,7 +145,7 @@ export default {
 }
 
 .t-loading {
-    z-index: 9999;
+    z-index: 9000;
     left:0;
     top: 0;
     position: absolute;

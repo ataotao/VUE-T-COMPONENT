@@ -239,10 +239,10 @@ Vue.use(Pagenation);
         <td>是否显示取消按钮</td>
         <td>Boolean</td>
         <td>false</td>
-        <td>true</td>
+        <td>false</td>
       </tr>
       <tr>
-        <th>ConfirmBtnText</th>
+        <th>confirmBtnText</th>
         <td>确定按钮文字</td>
         <td>String</td>
         <td>false</td>
@@ -429,6 +429,121 @@ Vue.use(Pagenation);
         <td>string</td>
         <td>false</td>
         <td>'rgba(255, 255, 255, 0.9)'</td>
+      </tr>
+    </tbody>
+</table>
+
+
+### t-modal
+##### 参数
+
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>是否必选</th>
+        <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>visible</th>
+        <td>模态框显示状态，需要添加.sync 修饰符</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <th>title</th>
+        <td>模态框标题</td>
+        <td>String</td>
+        <td>false</td>
+        <td>提示</td>
+      </tr>
+      <tr>
+        <th>isTitle</th>
+        <td>是否有标题</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>showCloseBtn</th>
+        <td>是否显示关闭按钮</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>showConfirmBtn</th>
+        <td>是否显示确定按钮</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>showCancelBtn</th>
+        <td>是否显示取消按钮</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <th>confirmBtnText</th>
+        <td>确定按钮文字</td>
+        <td>String</td>
+        <td>false</td>
+        <td>取消</td>
+      </tr>
+      <tr>
+        <th>cancelBtnText</th>
+        <td>取消按钮文字</td>
+        <td>String</td>
+        <td>false</td>
+        <td>确定</td>
+      </tr>
+      <tr>
+        <th>closeOnBackdrop</th>
+        <td>点击遮罩是否关闭</td>
+        <td>Boolean</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <th>size</th>
+        <td>模态框尺寸</td>
+        <td>String</td>
+        <td>false</td>
+        <td>lg (lg | md | sm)</td>
+      </tr>
+    </tbody>
+</table>
+
+##### 事件
+
+<table>
+    <thead>
+    <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>回调参数</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>onConfirm</th>
+        <td>确定后回调函数</td>
+        <td>Function</td>
+        <td>close,当确定后，根据当前的操作情况，调用close(true | false)来识别是否关闭模态框</td>
+      </tr>
+      <tr>
+        <th>onClose：</th>
+        <td>关闭后回调函数</td>
+        <td>Function</td>
+        <td>-----</td>
       </tr>
     </tbody>
 </table>

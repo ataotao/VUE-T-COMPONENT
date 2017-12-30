@@ -5,11 +5,13 @@ const Mask = Vue.extend(Loading);
 const initLoading = function(el, binding) {
   if (binding.value === false && (binding.oldValue && binding.oldValue !== binding.value)) {
     el.style.position = '';
+    el.style.zIndex = '';
     el.removeChild(el.mask);
   }
 
   if (binding.value === true && binding.oldValue !== binding.value) {
     el.style.position = 'relative';
+    el.style.zIndex = 1;
     el.appendChild(el.mask);
   }
 };
