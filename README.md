@@ -7,7 +7,8 @@
   <li>通知： t-message</li>
   <li>模态框： t-modal</li>
   <li>MessageBox对话框： t-msgbox </li>
-  <li>Loading加载： t-loading</li>
+  <li>页面加载: t-pageloading</li>
+  <li>局部加载： t-loading</li>
   <li>暂无数据： t-nodata</li>
 </ul>
 
@@ -309,11 +310,11 @@ Vue.use(Pagenation);
 ##### 参数
 > 支持通过slot写入其他自定义内容，例如：
 
-`
+```
   <t-nodata msg="自定义无数据内容" icon="glyphicon glyphicon-floppy-remove" iconSize="50px" color="black">
   这是我想放入的其他内容
   </t-nodata>
-`
+```
 <table>
     <thead>
     <tr>
@@ -355,3 +356,20 @@ Vue.use(Pagenation);
       </tr>
     </tbody>
 </table>
+
+### t-pageloading 页面加载
+> 两种使用方式：
+
+```
+  <!-- 直接调用 -->
+  this.$pageloading.open();
+    setTimeout(() => {
+    this.$pageloading.close();
+  }, 2000);
+
+  <!-- 赋值调用 -->
+  let loading = this.$pageloading.open();
+  setTimeout(() => {
+    loading.close();
+  }, 500);
+```

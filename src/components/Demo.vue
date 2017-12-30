@@ -14,7 +14,7 @@
       <button type="button" class="btn btn-primary" @click="msgboxFn()">点击弹出对话框</button>
     </div>
 
-    <h3>暂无数据 t-nodata{{currentPage}}</h3>
+    <h3>暂无数据 t-nodata</h3>
     <div>
       <!-- 默认状态 -->
       <t-nodata></t-nodata>
@@ -24,6 +24,10 @@
       </t-nodata>
     </div>
 
+    <h3>页面加载 t-pageloading</h3>
+    <div>
+      <button type="button" class="btn btn-primary" @click="pageloadingFn">点击页面加载</button>
+    </div>
 
   </div>
 </template>
@@ -45,6 +49,19 @@ export default {
     }, 5000);
   },
   methods: {
+    pageloadingFn() {
+      this.$pageloading.open();
+      setTimeout(() => {
+        this.$pageloading.close();
+      }, 2000);
+
+      setTimeout(() => {
+        let loading = this.$pageloading.open();
+        setTimeout(() => {
+          loading.close();
+        }, 500);
+      }, 1000);
+    },
     msgboxFn() {
       this.$msgbox({
         title: '提示111',
