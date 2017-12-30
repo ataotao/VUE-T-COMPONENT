@@ -14,6 +14,17 @@
       <button type="button" class="btn btn-primary" @click="msgboxFn()">点击弹出对话框</button>
     </div>
 
+    <h3>暂无数据 t-nodata{{currentPage}}</h3>
+    <div>
+      <!-- 默认状态 -->
+      <t-nodata></t-nodata>
+      <!-- 带参数 -->
+      <t-nodata msg="自定义无数据内容" icon="glyphicon glyphicon-floppy-remove" iconSize="50px" color="black">
+        <div style="font-size:14px; color:#CC0000;">这里可以放一些其他的slot内容，<button type="button" class="btn btn-xs btn-primary" @click="count++">+</button> 数字：{{count}}</div>
+      </t-nodata>
+    </div>
+
+
   </div>
 </template>
 
@@ -22,6 +33,7 @@ export default {
   name: 'Demo',
   data() {
     return {
+      count: 0,
       pageTotal: 400,
       currentPage: 1
     };
@@ -95,7 +107,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import url("//at.alicdn.com/t/font_241505_rwlom992euq5mi.css");
+/* @import url("//at.alicdn.com/t/font_241505_rwlom992euq5mi.css"); */
 h1,
 h2 {
   font-weight: normal;

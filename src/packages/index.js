@@ -1,9 +1,11 @@
 import pagenation from './pagenation';
 import message from './message';
 import msgbox from './msgbox';
+import nodata from './nodata';
 
 const components = [
-  pagenation
+  pagenation,
+  nodata
 ];
 
 const install = Vue => {
@@ -18,4 +20,5 @@ const install = Vue => {
 export const Pagenation = pagenation;
 export const Message = message;
 export const Msgbox = msgbox;
+export const Nodata = nodata;
 export default install;

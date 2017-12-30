@@ -1,7 +1,7 @@
 <template>
   <transition name="t-message-fade">
     <div class="t-message text-center" v-if="visible">
-      <div class="t-icon" :class="icon ? icon : 'glyphicon glyphicon-exclamation-sign'" v-if="isIcon"></div>
+      <div class="t-icon" :class="icon ? icon : 'iconfont icon-point'" v-if="isIcon"></div>
       <div v-html="msg"></div>
     </div>
   </transition>

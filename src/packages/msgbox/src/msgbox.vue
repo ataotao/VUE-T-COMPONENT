@@ -9,7 +9,9 @@
               <button type="button" class="close" v-if="showCloseBtn">
                 <span data-name="close">&times;</span>
               </button>
-              <h4 class="t-msgbox-title" v-text="title"></h4>
+              <h4 class="t-msgbox-title">
+                <span v-text="title"></span> &nbsp;
+              </h4>
             </div>
 
             <div class="t-msgbox-body">

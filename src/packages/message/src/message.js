@@ -1,3 +1,4 @@
+import '../../_icon/iconfont.css';
 import Main from './message.vue';
 import Vue from 'vue';
 

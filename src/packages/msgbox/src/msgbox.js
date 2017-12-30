@@ -34,7 +34,7 @@ const Msgbox = function(options = {}) {
 
   if (options === Object(options)) {
     for (const key in options) {
-      instance.$props[key] = options[key] === undefined ? instance.$props[key] : options[key];
+      instance.$props[key] = options[key] === undefined ? instance.$props[key] : options[key] === '' ? key === 'title' ? '' : instance.$props[key] : options[key];
     }
   }
 
