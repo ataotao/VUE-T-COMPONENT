@@ -198,6 +198,7 @@ export default {
       setTimeout(() => {
         // 关闭模态框
         close(true);
+        this.$message('操作成功');
       }, 1000);
     },
     modalClose() {
