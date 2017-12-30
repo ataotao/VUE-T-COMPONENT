@@ -1,7 +1,7 @@
 <template>
   <span class="no-data" :style="{'color': color}">
     <span class="icon" :class="icon" :style="{ 'font-size': iconSize}"></span>
-    <span class="text-center f24 no-data-text" v-html="msg"></span>
+    <span class="text-center f24 no-data-text" :style="{ 'font-size': fontSize}" v-html="msg"></span>
     <slot></slot>
   </span>
 </template>
@@ -22,6 +22,10 @@ export default {
       type: String,
       default: '160px'
     },
+    fontSize: {
+      type: String,
+      default: '24px'
+    },
     color: {
       type: String,
       default: '#DDD'
@@ -36,7 +40,6 @@ export default {
 /* 空数据 */
 .no-data {
   text-align: center;
-  font-size: 30px;
 }
 .no-data .icon {
   line-height: 1;

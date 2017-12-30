@@ -348,6 +348,13 @@ Vue.use(Pagenation);
         <td>'160px'</td>
       </tr>
       <tr>
+        <th>fontSize</th>
+        <td>文字尺寸</td>
+        <td>string</td>
+        <td>false</td>
+        <td>'24px'</td>
+      </tr>
+      <tr>
         <th>color</th>
         <td>控件显示颜色</td>
         <td>string</td>

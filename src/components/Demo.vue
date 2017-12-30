@@ -19,7 +19,7 @@
       <!-- 默认状态 -->
       <t-nodata></t-nodata>
       <!-- 带参数 -->
-      <t-nodata msg="自定义无数据内容" icon="glyphicon glyphicon-floppy-remove" iconSize="50px" color="black">
+      <t-nodata msg="自定义无数据内容" icon="glyphicon glyphicon-floppy-remove" iconSize="50px" fontSize="18px" color="black">
         <div style="font-size:14px; color:#CC0000;">这里可以放一些其他的slot内容，<button type="button" class="btn btn-xs btn-primary" @click="count++">+</button> 数字：{{count}}</div>
       </t-nodata>
     </div>
