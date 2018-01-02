@@ -1,15 +1,15 @@
 # vue-t-component
 
 > VUE自定义组件，方便工作使用
-> Demo: localhost:8080
+> Demo: https://ataotao.github.io/vue-t-component
 <ul>
-  <li>分页： t-pagination</li>
-  <li>通知： t-message</li>
-  <li>模态框： t-modal</li>
-  <li>MessageBox对话框： t-msgbox </li>
-  <li>页面加载: t-pageloading</li>
-  <li>局部加载： t-loading</li>
-  <li>暂无数据： t-nodata</li>
+  <li><a href="#t-pagination">分页： t-pagination</a></li>
+  <li><a href="#t-message">通知： t-message</a></li>
+  <li><a href="#t-modal">模态框： t-modal</a></li>
+  <li><a href="#t-msgbox">MessageBox对话框： t-msgbox</a></li>
+  <li><a href="#t-pageloading">页面加载: t-pageloading</a></li>
+  <li><a href="#t-loading">局部加载： t-loading</a></li>
+  <li><a href="#t-nodata">暂无数据： t-nodata</a></li>
 </ul>
 
 ## Build Setup
@@ -21,24 +21,23 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-运行Demo localhost:8080
+运行 localhost:8080
 ```
 
 ## 使用方式
 
-`
-全部引入
+```
+// 全部引入
 import tComponents from '@/packages/index';
 Vue.use(tComponents);
 
-或单个引入
-
+// 或单个引入
 import { Pagenation } from '@/packages/index';
 Vue.use(Pagenation);
-`
+```
 
 ## 参数说明
-### t-pagination
+### <a name="t-pagination">t-pagination</a>
 
 ##### 参数
 <table>
@@ -124,7 +123,7 @@ Vue.use(Pagenation);
     </tbody>
 </table>
 
-### t-message
+### <a name="t-message">t-message</a>
 
 ##### 参数
 <table>
@@ -190,7 +189,7 @@ Vue.use(Pagenation);
     </tbody>
 </table>
 
-### t-msgbox
+### <a name="t-msgbox">t-msgbox</a>
 ##### 参数
 
 ###### 只有msg为必填参数 ，如果没有其他后续操作，简单使用方式，可以this.$msgbox('清楚该提示了吗');
@@ -306,7 +305,7 @@ Vue.use(Pagenation);
     </tbody>
 </table>
 
-### t-data
+### <a name="t-nodata">t-nodata</a>
 ##### 参数
 > 支持通过slot写入其他自定义内容，例如：
 
@@ -382,7 +381,8 @@ Vue.use(Pagenation);
 ```
 
 
-### t-loading 局部加载(指令方式 v-t-loading)
+### <a name="t-loading">t-loading</a>
+> 局部加载(指令方式 v-t-loading)
 > 两种使用方式：
 
 ```
@@ -434,7 +434,7 @@ Vue.use(Pagenation);
 </table>
 
 
-### t-modal
+### <a name="t-modal">t-modal</a>
 ##### 参数
 
 <table>
