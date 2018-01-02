@@ -27,6 +27,9 @@ npm run dev
 ## 使用方式
 
 ```
+// 组件依赖bootstrap3样式
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 // 全部引入
 import tComponents from '@/packages/index';
 Vue.use(tComponents);
