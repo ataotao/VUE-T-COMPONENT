@@ -32,8 +32,9 @@ import tComponents from '@/packages/index';
 Vue.use(tComponents);
 
 // 或单个引入
-import { Pagenation } from '@/packages/index';
+import { Pagenation，Msgbox } from '@/packages/index';
 Vue.use(Pagenation);
+Vue.prototype.$msgbox = Msgbox;
 ```
 
 ## 参数说明
